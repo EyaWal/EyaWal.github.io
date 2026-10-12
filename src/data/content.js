@@ -12,8 +12,8 @@ export const profile = {
 
 export const links = {
   github: "https://github.com/EyaWal",
-  linkedin: "", // ex. "https://www.linkedin.com/in/ton-profil"
-  email: "", // ex. "prenom.nom@exemple.com"
+  linkedin: "https://www.linkedin.com/in/walhaeya/", // ex. "https://www.linkedin.com/in/ton-profil"
+  email: "eya.walha.contact@gmail.com", // ex. "prenom.nom@exemple.com"
 };
 
 export const projects = [

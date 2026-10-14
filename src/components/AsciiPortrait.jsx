@@ -47,10 +47,10 @@ export default function AsciiPortrait({ label }) {
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, data.w, data.h);
-      ctx.font = `${data.font}px "IBM Plex Mono", ui-monospace, monospace`;
+      ctx.font = `${data.font}px ui-monospace, "SF Mono", Menlo, Consolas, monospace`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillStyle = "#D4A24C";
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--sage").trim() || "#9fc79b";
 
       for (const [x, y, c, a] of data.particles) {
         let px = x;
@@ -108,7 +108,7 @@ export default function AsciiPortrait({ label }) {
       canvas.width = Math.round(data.w * dpr);
       canvas.height = Math.round(data.h * dpr);
       canvas.style.aspectRatio = `${data.w} / ${data.h}`;
-      canvas.style.maxWidth = `${data.w}px`;
+      canvas.style.maxWidth = "36rem";
       draw();
     }
 

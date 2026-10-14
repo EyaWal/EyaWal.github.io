@@ -7,7 +7,7 @@ import Contact from "./components/Contact.jsx";
 
 export default function App() {
   return (
-    <>
+    <div className="window">
       <Header />
       <main>
         <Hero />
@@ -16,6 +16,6 @@ export default function App() {
         <Skills />
       </main>
       <Contact />
-    </>
+    </div>
   );
 }

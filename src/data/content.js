@@ -2,8 +2,8 @@
 // Un lien laissé vide ("") n'est pas affiché sur le site.
 
 export const profile = {
-  name: "Eya Walha",
-  headline: "Je construis des pipelines de données qu'on peut suivre à l'œil.",
+  name: "Hi! C'est Eya ",
+  headline: "",
   lede:
     "Alternante data engineer au sein d'une équipe Business Intelligence, où je surveille des flux de données au quotidien, et étudiante en spécialisation IA et data (MAIA) à Télécom SudParis. J'aime les projets où la donnée devient une décision.",
   chips: ["Python", "SQL", "Tableau", "Dremio", "scikit-learn", "FastAPI"],
@@ -32,16 +32,17 @@ export const projects = [
   },
   {
     title: "FarCare",
-    status: { label: "en conception", tone: "early" },
+    status: { label: "prototype", tone: "early" },
     description:
-      "Un outil pensé pour les enfants aidants à distance de parents vieillissants restés au pays : des check-ins de bien-être réguliers, couplés à une simulation Monte Carlo pour estimer un coussin financier de sécurité. Le projet est au stade du cadrage : roadmap et architecture définies, développement à venir.",
+      "Un prototype pour les personnes qui accompagnent un parent âgé à distance : des check-ins réguliers avec un tableau de bord, trois alertes simples (médicaments oubliés, moral en baisse, sommeil qui se dégrade) et un simulateur Monte Carlo de 5 000 scénarios qui estime le risque de manquer d'argent après une dépense de santé imprévue.",
     facts: [
-      ["Statut", "cadrage terminé"],
-      ["Stack", "FastAPI, SQLAlchemy, scikit-learn, Streamlit"],
+      ["Statut", "prototype fonctionnel"],
+      ["Stack", "Python, simulation Monte Carlo"],
     ],
-    repo: "",
-    demo: "",
+    repo: "https://github.com/EyaWal/Farcare",
+    
   },
+  
 ];
 
 export const journey = [

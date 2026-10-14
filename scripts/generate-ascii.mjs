@@ -17,6 +17,7 @@ const output = path.join(root, "src/assets/asciiData.js");
 
 const RAMP = " .:-=+*#%@";
 const SIZES = [
+  { key: 640, font: 10 },
   { key: 400, font: 7 },
   { key: 280, font: 5 },
   { key: 220, font: 5 },

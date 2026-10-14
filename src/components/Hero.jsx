@@ -3,23 +3,20 @@ import AsciiPortrait from "./AsciiPortrait.jsx";
 
 export default function Hero() {
   return (
-    <section id="top" className="hero">
-      <div className="wrap hero-grid">
-        <div className="hero-text">
-          <h1>{profile.headline}</h1>
-          <p className="lede">{profile.lede}</p>
-          <ul className="chips" aria-label="Technologies">
-            {profile.chips.map((chip) => (
-              <li key={chip}>{chip}</li>
-            ))}
-          </ul>
-          <a className="button" href="#contact">
-            Me contacter
-          </a>
-        </div>
-        <div className="hero-portrait">
-          <AsciiPortrait label={profile.portraitLabel} />
-        </div>
+    <section id="top" className="pad hero">
+      <div>
+        <h1>
+          {profile.name}
+          <span className="cursor" aria-hidden="true"></span>
+        </h1>
+        <p className="tagline">{profile.headline}</p>
+        <p className="lede">{profile.lede}</p>
+        <a className="btn" href="#contact">
+          me contacter
+        </a>
+      </div>
+      <div className="portrait-wrap">
+        <AsciiPortrait label={profile.portraitLabel} />
       </div>
     </section>
   );

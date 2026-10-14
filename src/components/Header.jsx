@@ -1,19 +1,18 @@
-import { profile } from "../data/content.js";
-
 export default function Header() {
   return (
-    <header className="site-header">
-      <div className="wrap header-row">
-        <a href="#top" className="brand">
-          {profile.name}
-        </a>
-        <nav aria-label="Navigation principale">
-          <a href="#projets">Projets</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#competences">Compétences</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
+    <header className="titlebar">
+      <span className="pips" aria-hidden="true">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+      <span>Eya WALHA :~</span>
+      <nav aria-label="Navigation principale">
+        <a href="#projets">projets</a>
+        <a href="#parcours">parcours</a>
+        <a href="#competences">stack</a>
+        <a href="#contact">contact</a>
+      </nav>
     </header>
   );
 }

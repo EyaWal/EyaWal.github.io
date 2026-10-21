@@ -1,7 +1,12 @@
+
+import { useState } from "react";
 import { profile } from "../data/content.js";
 import AsciiPortrait from "./AsciiPortrait.jsx";
+import "./Hero.css";
 
 export default function Hero() {
+  const [showPhoto, setShowPhoto] = useState(false);
+
   return (
     <section id="top" className="pad hero">
       <div>
@@ -9,14 +14,42 @@ export default function Hero() {
           {profile.name}
           <span className="cursor" aria-hidden="true"></span>
         </h1>
+
         <p className="tagline">{profile.headline}</p>
         <p className="lede">{profile.lede}</p>
+
         <a className="btn" href="#contact">
           me contacter
         </a>
       </div>
+
       <div className="portrait-wrap">
-        <AsciiPortrait label={profile.portraitLabel} />
+        <button
+          type="button"
+          className={`portrait-toggle ${showPhoto ? "show-photo" : ""}`}
+          onClick={() => setShowPhoto((current) => !current)}
+          aria-label={
+            showPhoto
+              ? "Afficher le portrait ASCII"
+              : "Afficher la photo réelle"
+          }
+          aria-pressed={showPhoto}
+        >
+          <div className="portrait-ascii" aria-hidden={showPhoto}>
+            <AsciiPortrait label={profile.portraitLabel} />
+          </div>
+
+          <img
+            className="portrait-photo"
+            src="/photo_profil.png"
+            alt="Portrait professionnel d'Eya Walha"
+            aria-hidden={!showPhoto}
+          />
+
+          <span className="portrait-hint" aria-hidden="true">
+            {showPhoto ? "↩ MODE ASCII" : "↗ REVEAL PHOTO"}
+          </span>
+        </button>
       </div>
     </section>
   );

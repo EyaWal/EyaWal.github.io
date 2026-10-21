@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 import { PNG } from "pngjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const input = path.resolve(root, process.argv[2] || "public/profile.png");
+const input = path.resolve(root, process.argv[2] || "public/photo_profil_cutout.png");
 const output = path.join(root, "src/assets/asciiData.js");
 
 const RAMP = " .:-=+*#%@";

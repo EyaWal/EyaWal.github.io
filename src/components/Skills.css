@@ -1,0 +1,490 @@
+
+.skill-tree {
+  --tree-green: #b8e8bf;
+  --tree-muted: #83b995;
+  --tree-border: #396b49;
+  --tree-yellow: #e4ca7b;
+
+  background: #08160f;
+  color: var(--tree-green);
+  border: 1px solid var(--tree-border);
+  border-radius: 14px;
+  padding: clamp(18px, 4vw, 32px);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.tree-terminal {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--tree-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.tree-online {
+  color: #8de5a0;
+}
+
+.tree-intro {
+  margin: 22px 0;
+  color: var(--tree-muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.tree-root {
+  display: flex;
+  justify-content: center;
+}
+
+.tree-root span {
+  padding: 14px 20px;
+  background: #19422b;
+  border: 1px solid #6cbb7d;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tree-trunk {
+  height: 24px;
+  width: 1px;
+  margin: auto;
+  background: #487d58;
+}
+
+.tree-connector {
+  width: 75%;
+  height: 1px;
+  margin: auto;
+  background: #487d58;
+}
+
+.tree-branches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tree-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 110px;
+  padding: 14px 10px;
+  background: #10291b;
+  color: var(--tree-green);
+  border: 1px solid var(--tree-border);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 0.78rem;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.tree-branch:hover,
+.tree-branch.active {
+  background: #1c4930;
+  border-color: #a2e9aa;
+  box-shadow: 0 0 15px #66d88825;
+}
+
+.tree-branch:hover {
+  transform: translateY(-3px);
+}
+
+.tree-branch small {
+  color: var(--tree-muted);
+  font-size: 0.65rem;
+}
+
+.branch-icon {
+  font-size: 1.3rem;
+  color: #9ce5a7;
+}
+
+.tree-leaves {
+  padding: 18px;
+  background: #0b1c13;
+  border: 1px dashed var(--tree-border);
+  border-radius: 10px;
+}
+
+.tree-leaves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tree-leaves-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tree-leaves-header span {
+  color: var(--tree-muted);
+  font-size: 0.7rem;
+}
+
+.tree-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tree-skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  background: #10261a;
+  border: 1px solid #31583f;
+  border-radius: 6px;
+  color: #c4ebc8;
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.tree-skill:hover,
+.tree-skill.active {
+  background: #245137;
+  border-color: #a0e3ab;
+}
+
+.tree-skill.learning {
+  color: var(--tree-yellow);
+  border-color: #6b6038;
+}
+
+.tree-skill.learning:hover,
+.tree-skill.learning.active {
+  background: #403820;
+  border-color: var(--tree-yellow);
+}
+
+.tree-detail {
+  min-height: 120px;
+  padding: 18px;
+  background: #0e2318;
+  border: 1px solid #31583f;
+  border-radius: 10px;
+}
+
+.tree-detail strong {
+  font-size: 0.9rem;
+  color: #d1f5d4;
+}
+
+.tree-detail p {
+  margin: 10px 0;
+  color: #9fc9a8;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.detail-practiced,
+.detail-learning {
+  font-size: 0.72rem;
+}
+
+.detail-practiced {
+  color: #8cdb9b;
+}
+
+.detail-learning {
+  color: var(--tree-yellow);
+}
+
+.tree-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 18px;
+  color: #a7c6aa;
+  font-size: 0.68rem;
+}
+
+.tree-branch:focus-visible,
+.tree-skill:focus-visible {
+  outline: 2px solid #d1f5d4;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .tree-branches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tree-branch {
+    min-height: 95px;
+  }
+
+  .tree-leaves-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tree-branch,
+  .tree-skill {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   SKILL TREE — Améliorations visuelles
+   ========================================== */
+
+/* Branches plus grandes et lisibles */
+.tree-branch {
+  position: relative;
+  min-height: 125px;
+  padding: 18px 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Branche sélectionnée : lumière verte */
+.tree-branch.active {
+  background: #1c4930;
+  border-color: #a2e9aa;
+  box-shadow:
+    0 0 18px rgba(102, 216, 136, 0.18),
+    inset 0 0 20px rgba(102, 216, 136, 0.06);
+  opacity: 1;
+}
+
+/* Branches non sélectionnées */
+.tree-branch:not(.active) {
+  opacity: 0.78;
+}
+
+/* Interaction au survol */
+.tree-branch:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* Icônes des branches */
+.branch-icon {
+  font-size: 1.6rem;
+}
+
+/* Nombre de compétences */
+.tree-branch small {
+  font-size: 0.72rem;
+}
+
+/* Compétences plus lisibles */
+.tree-skill {
+  font-size: 0.82rem;
+  padding: 10px 13px;
+  line-height: 1.5;
+}
+
+/* Effet lumineux sur la compétence sélectionnée */
+.tree-skill.active {
+  box-shadow: 0 0 12px rgba(102, 216, 136, 0.12);
+}
+
+/* Compétences en apprentissage */
+.tree-skill.learning.active {
+  box-shadow: 0 0 12px rgba(228, 202, 123, 0.14);
+}
+
+/* Description de la compétence */
+.tree-detail {
+  min-height: 110px;
+  transition: border-color 0.25s ease;
+}
+
+.tree-detail strong {
+  font-size: 1rem;
+}
+
+.tree-detail p {
+  font-size: 0.85rem;
+}
+
+/* Animation d'apparition des compétences */
+@keyframes skill-grow {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tree-skill-list .tree-skill {
+  animation: skill-grow 0.35s ease both;
+}
+
+.tree-skill-list .tree-skill:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.tree-skill-list .tree-skill:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.tree-skill-list .tree-skill:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.tree-skill-list .tree-skill:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.tree-skill-list .tree-skill:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+/* Adaptation mobile */
+@media (max-width: 700px) {
+  .tree-branch {
+    min-height: 105px;
+    padding: 14px 10px;
+    font-size: 0.82rem;
+  }
+
+  .tree-skill {
+    font-size: 0.78rem;
+  }
+}
+
+/* Accessibilité : réduire les animations */
+@media (prefers-reduced-motion: reduce) {
+  .tree-branch,
+  .tree-skill,
+  .tree-detail {
+    transition: none;
+  }
+
+  .tree-skill-list .tree-skill {
+    animation: none;
+  }
+}
+
+/* ========================================
+   ARBRE SVG — BRANCHES ANIMÉES
+   ======================================== */
+
+.tree-growing-paths {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  overflow: visible;
+}
+
+.tree-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.tree-path {
+  fill: none;
+  stroke: #487d58;
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.branch-path {
+  opacity: 0.5;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: grow-branch 1.8s ease forwards;
+  transition:
+    stroke 0.3s ease,
+    opacity 0.3s ease,
+    filter 0.3s ease;
+}
+
+.branch-path:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+.branch-path:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+.branch-path:nth-of-type(4) {
+  animation-delay: 0.45s;
+}
+
+.branch-path:nth-of-type(5) {
+  animation-delay: 0.6s;
+}
+
+.branch-path.selected {
+  stroke: #a2e9aa;
+  opacity: 1;
+  filter: drop-shadow(0 0 5px rgba(162, 233, 170, 0.7));
+}
+
+.tree-path.trunk {
+  stroke: #7fcf91;
+  stroke-width: 3;
+}
+
+@keyframes grow-branch {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Rapprocher les cartes des branches */
+.tree-branches {
+  position: relative;
+  margin-top: -1px;
+}
+
+/* Mobile : remplacer les courbes par un tronc simple */
+@media (max-width: 700px) {
+  .tree-growing-paths {
+  height: clamp(75px, 10vw, 120px);
+}
+
+  .tree-svg .branch-path {
+    display: none;
+  }
+
+  .tree-svg .trunk {
+    stroke-width: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-path {
+    animation: none;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}

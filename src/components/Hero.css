@@ -1,0 +1,116 @@
+
+/* Portrait interactif ASCII ↔ Photo */
+
+.portrait-toggle {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: inherit;
+  isolation: isolate;
+}
+
+.portrait-ascii {
+  position: relative;
+  width: 100%;
+  transition:
+    opacity 0.65s ease,
+    filter 0.65s ease;
+}
+
+.portrait-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  opacity: 0;
+  filter: grayscale(1) sepia(0.25) hue-rotate(75deg);
+  transition:
+    opacity 0.65s ease,
+    filter 0.65s ease;
+}
+
+/* Photo visible */
+.portrait-toggle.show-photo .portrait-photo {
+  opacity: 1;
+  filter: none;
+}
+
+.portrait-toggle.show-photo .portrait-ascii {
+  opacity: 0;
+}
+
+/* Effet au survol : prévisualisation */
+@media (hover: hover) {
+  .portrait-toggle:not(.show-photo):hover .portrait-photo {
+    opacity: 0.8;
+    filter: grayscale(0.6) sepia(0.2);
+  }
+
+  .portrait-toggle:not(.show-photo):hover .portrait-ascii {
+    opacity: 0.2;
+  }
+}
+
+/* Indication interactive */
+.portrait-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 6px 10px;
+  border: 1px solid #6cbb7d;
+  border-radius: 6px;
+  background: rgba(8, 22, 15, 0.88);
+  color: #b8e8bf;
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.portrait-toggle:focus-visible {
+  outline: 2px solid #b8e8bf;
+  outline-offset: 5px;
+}
+
+/* Réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  .portrait-ascii,
+  .portrait-photo {
+    transition: none;
+  }
+}
+.portrait-toggle {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: inherit;
+  isolation: isolate;
+}
+
+.portrait-photo {
+  border: none;
+  border-radius: 0;
+}
+.portrait-wrap,
+.portrait-ascii,
+.portrait {
+  border: none;
+  box-shadow: none;
+}

@@ -108,7 +108,7 @@ export default function AsciiPortrait({ label }) {
       canvas.width = Math.round(data.w * dpr);
       canvas.height = Math.round(data.h * dpr);
       canvas.style.aspectRatio = `${data.w} / ${data.h}`;
-      canvas.style.maxWidth = "36rem";
+      canvas.style.maxWidth = "22rem";
       draw();
     }
 

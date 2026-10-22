@@ -3,10 +3,10 @@
 // Contenu du portfolio — les liens vides ne sont pas affichés.
 
 export const profile = {
-  name: "Hi! C'est Eya",
-  headline: "Data Engineering · Machine Learning · IA",
+  name: "Salut! C'est Eya",
+  headline: "Machine Learning · IA · Data Engineering",
   lede:
-    "Étudiante ingénieure en dernière année à Télécom SudParis, spécialisée en Modèles et Applications de l'Intelligence Artificielle (MAIA), et Data Engineer en apprentissage chez BNP Paribas Personal Finance. Mon parcours combine Data Engineering, automatisation de pipelines et monitoring de flux de données. Aujourd'hui, j'approfondis mes compétences en Machine Learning à travers des projets de prédiction et d'évaluation de modèles d'IA.",
+    "Étudiante ingénieure en dernière année à Télécom SudParis, spécialisée en Modèles et Applications de l'Intelligence Artificielle (MAIA), et Data Engineer en apprentissage chez BNP Paribas Personal Finance.Aujourd'hui, j'aimerais mettre à profit mon expérience en Data Engineering pour développer des solutions de Machine Learning fiables, jusqu'à leur mise en production",
   chips: ["Python", "SQL", "Tableau", "Dremio", "scikit-learn", "FastAPI"],
   portraitLabel: "Portrait d'Eya Walha dessiné en caractères ASCII",
 };
@@ -17,6 +17,42 @@ export const links = {
   email: "eya.walha.contact@gmail.com",
 };
 
+export const journey = [
+  {
+    when: "Sept. 2024 — aujourd'hui",
+    title: "Data Engineer en apprentissage — BNP Paribas Personal Finance",
+    sections: [
+      {
+        title: "Data Engineering & Cloud",
+        text:
+          "Développement de requêtes SQL et de vues virtualisées sur Dremio. Contribution à la migration de scripts Autosys/HDFS vers des DAGs Apache Airflow sur le cloud interne IBM COS.",
+      },
+      {
+        title: "Data Analytics & Monitoring",
+        text:
+          "Conception de dashboards Tableau pour suivre la réception des fichiers, les retards, les horaires attendus et les volumes. Automatisation de la collecte de métadonnées.",
+      },
+      {
+        title: "Machine Learning & IA",
+        status: "En cours",
+        text:
+          "Développement d'un modèle de prédiction des retards de réception de fichiers à partir de données historiques. Participation à l'évaluation comparative de modèles de langage pour l'interrogation de données en langage naturel.",
+      },
+    ],
+  },
+  {
+    when: "2024 — 2027",
+    title: "Diplôme d'ingénieur — Télécom SudParis",
+    text:
+      "Formation d'ingénieure en informatique par apprentissage, spécialisation MAIA (Modèles et Applications de l'Intelligence Artificielle). Enseignements en Machine Learning, Deep Learning, algorithmique et traitement des données.",
+  },
+  {
+    when: "2022 — 2024",
+    title: "Classes préparatoires scientifiques — MP*",
+    text:
+      "Formation scientifique approfondie en mathématiques, physique et informatique, avec un travail de modélisation et de simulation en Python dans le cadre du TIPE.",
+  },
+];
 export const projects = [
   {
     title: "Olist — Prédiction des retards de livraison",
@@ -72,42 +108,6 @@ export const projects = [
   },
 ];
 
-export const journey = [
-  {
-    when: "Sept. 2024 — aujourd'hui",
-    title: "Data Engineer en apprentissage — BNP Paribas Personal Finance",
-    sections: [
-      {
-        title: "Data Engineering & Cloud",
-        text:
-          "Développement de requêtes SQL et de vues virtualisées sur Dremio. Contribution à la migration de scripts Autosys/HDFS vers des DAGs Apache Airflow sur le cloud interne IBM COS.",
-      },
-      {
-        title: "Data Analytics & Monitoring",
-        text:
-          "Conception de dashboards Tableau pour suivre la réception des fichiers, les retards, les horaires attendus et les volumes. Automatisation de la collecte de métadonnées.",
-      },
-      {
-        title: "Machine Learning & IA",
-        status: "En cours",
-        text:
-          "Développement d'un modèle de prédiction des retards de réception de fichiers à partir de données historiques. Participation à l'évaluation comparative de modèles de langage pour l'interrogation de données en langage naturel.",
-      },
-    ],
-  },
-  {
-    when: "2024 — 2027",
-    title: "Diplôme d'ingénieur — Télécom SudParis",
-    text:
-      "Formation d'ingénieure en informatique par apprentissage, spécialisation MAIA (Modèles et Applications de l'Intelligence Artificielle). Enseignements en Machine Learning, Deep Learning, algorithmique et traitement des données.",
-  },
-  {
-    when: "2022 — 2024",
-    title: "Classes préparatoires scientifiques — MP*",
-    text:
-      "Formation scientifique approfondie en mathématiques, physique et informatique, avec un travail de modélisation et de simulation en Python dans le cadre du TIPE.",
-  },
-];
 
 export const skills = [
   {
@@ -160,7 +160,7 @@ export const skills = [
 ];
 
 export const contact = {
-  title: "Construisons des solutions Data & IA.",
+  title: "Echangeons autour de la Data & IA.",
   text:
     "À la recherche d'un CDI à partir de septembre 2027 en Machine Learning, Intelligence Artificielle ou Data Engineering. N'hésitez pas à me contacter pour échanger sur une opportunité ou un projet.",
 };

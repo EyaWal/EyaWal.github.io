@@ -18,9 +18,21 @@ export default function Hero() {
         <p className="tagline">{profile.headline}</p>
         <p className="lede">{profile.lede}</p>
 
-        <a className="btn" href="#contact">
-          me contacter
-        </a>
+        <div className="hero-actions">
+          <a className="btn" href="#contact">
+            &gt; me contacter
+          </a>
+
+          <a
+            className="btn"
+            href="/documents/CV_Eya_Walha.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ↗ voir mon CV
+          </a>
+        </div>
+
       </div>
 
       <div className="portrait-wrap">

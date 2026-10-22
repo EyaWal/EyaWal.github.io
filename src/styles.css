@@ -445,3 +445,10 @@ h2 + .path {
   white-space: nowrap;
 }
 
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

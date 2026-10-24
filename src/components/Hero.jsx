@@ -1,11 +1,13 @@
-
 import { useState } from "react";
-import { profile } from "../data/content.js";
+import { useLanguage } from "../contexts/LanguageContext";
 import AsciiPortrait from "./AsciiPortrait.jsx";
 import "./Hero.css";
 
 export default function Hero() {
   const [showPhoto, setShowPhoto] = useState(false);
+  const { t, content } = useLanguage();
+  const { profile } = content;
+  
 
   return (
     <section id="top" className="pad hero">
@@ -20,7 +22,7 @@ export default function Hero() {
 
         <div className="hero-actions">
           <a className="btn" href="#contact">
-            &gt; me contacter
+            &gt; {t.hero.contact}
           </a>
 
           <a
@@ -29,10 +31,9 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            ↗ voir mon CV
+            ↗ {t.hero.cv}
           </a>
         </div>
-
       </div>
 
       <div className="portrait-wrap">
@@ -42,8 +43,8 @@ export default function Hero() {
           onClick={() => setShowPhoto((current) => !current)}
           aria-label={
             showPhoto
-              ? "Afficher le portrait ASCII"
-              : "Afficher la photo réelle"
+              ? t.hero.showAscii
+              : t.hero.showPhoto
           }
           aria-pressed={showPhoto}
         >
@@ -54,12 +55,12 @@ export default function Hero() {
           <img
             className="portrait-photo"
             src="/photo_profil.png"
-            alt="Portrait professionnel d'Eya Walha"
+            alt={t.hero.photoAlt}
             aria-hidden={!showPhoto}
           />
 
           <span className="portrait-hint" aria-hidden="true">
-            {showPhoto ? "↩ MODE ASCII" : "↗ REVEAL PHOTO"}
+            {showPhoto ? t.hero.asciiMode : t.hero.revealPhoto}
           </span>
         </button>
       </div>

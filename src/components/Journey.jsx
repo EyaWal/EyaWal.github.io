@@ -1,10 +1,13 @@
 
-import { journey } from "../data/content.js";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Journey() {
+  const { t, content } = useLanguage();
+  const { journey } = content;
+
   return (
     <section id="parcours" className="pad">
-      <h2>Expérience & Formation</h2>
+      <h2>{t.sections.journey}</h2>
 
       {journey.map((item) => (
         <div className="path" key={item.title}>

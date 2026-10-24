@@ -4,18 +4,24 @@ import Projects from "./components/Projects.jsx";
 import Journey from "./components/Journey.jsx";
 import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
-
-export default function App() {
+import { LanguageProvider } from "./contexts/LanguageContext";
+function App() {
   return (
-    <div className="window">
-      <Header />
-      <main>
-        <Hero />
-        <Journey />
-        <Projects />
-        <Skills />
-      </main>
-      <Contact />
-    </div>
+    <LanguageProvider>
+      <div className="window">
+        <Header />
+
+        <main>
+          <Hero />
+          <Journey />
+          <Projects />
+          <Skills />
+          <Contact />
+          
+        </main>
+      </div>
+    </LanguageProvider>
   );
 }
+
+export default App;

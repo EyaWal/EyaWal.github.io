@@ -1,9 +1,12 @@
-
 import { useState } from "react";
-import { skills } from "../data/content.js";
+import { useLanguage } from "../contexts/LanguageContext";
+
 import "./Skills.css";
 
 export default function Skills() {
+  const { t, content } = useLanguage();
+  const { skills } = content;
+
   const [activeGroup, setActiveGroup] = useState(0);
   const [activeSkill, setActiveSkill] = useState(0);
 
@@ -17,21 +20,24 @@ export default function Skills() {
 
   return (
     <section id="competences" className="pad">
-      <h2>Mon stack technique</h2>
+      <h2>{t.sections.stack}</h2>
 
       <div className="skill-tree">
         <div className="tree-terminal">
           <span>~/eya/skills/tree</span>
-          <span className="tree-online">● SYSTEM ONLINE</span>
+          <span className="tree-online">
+            ● {t.skills.online}
+          </span>
+          
         </div>
 
+      
         <p className="tree-intro">
-          Des racines solides, des branches qui se développent
-          et de nouvelles compétences à explorer.
+          {t.skills.intro}
         </p>
 
         <div className="tree-root">
-          <span>✳ DATA / MACHINE LEARNING / IA</span>
+          <span>✳ DATA / MACHINE LEARNING / {t.skills.ai}</span>
         </div>
 
         <div className="tree-growing-paths" aria-hidden="true">
@@ -77,7 +83,7 @@ export default function Skills() {
             >
               <span className="branch-icon">{item.icon}</span>
               <span>{item.group}</span>
-              <small>{item.items.length} compétences</small>
+              <small>{item.items.length} {t.skills.count}</small>
             </button>
           ))}
         </div>
@@ -87,7 +93,7 @@ export default function Skills() {
         <div className="tree-leaves">
           <div className="tree-leaves-header">
             <h3>{group.group}</h3>
-            <span>{group.items.length} compétences</span>
+            <span>{group.items.length} {t.skills.count}</span>
           </div>
 
           <div className="tree-skill-list">
@@ -123,15 +129,17 @@ export default function Skills() {
             }
           >
             {selected.level === "learning"
-              ? "🌱 En apprentissage"
-              : "● Pratiqué"}
+              ? `🌱 ${t.skills.learning}`
+              : `● ${t.skills.practiced}`}
+
+            
           </span>
         </div>
 
         <div className="tree-legend">
-          <span>● Compétence pratiquée</span>
-          <span>🌱 En apprentissage</span>
-          <span>↗ Clique pour explorer</span>
+            <span>● {t.skills.practicedSkill}</span>
+            <span>🌱 {t.skills.learning}</span>
+            <span>↗ {t.skills.explore}</span>
         </div>
       </div>
     </section>

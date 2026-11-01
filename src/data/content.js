@@ -54,6 +54,21 @@ export const journey = [
   },
 ];
 export const projects = [
+
+  {
+    title: "AI EcoLens — Performance et efficacité énergétique de l'IA",
+    status: { label: "Terminé · V1", tone: "early" },
+    description:
+      "Projet de Data Engineering et d'analyse de modèles d'IA visant à explorer le compromis entre performance et consommation énergétique à l'inférence. Développement d'un pipeline reproductible avec Python et DuckDB, intégration de benchmarks publics, analyse de 38 modèles avec SQL et optimisation de Pareto, et création d'un dashboard Tableau interactif.",
+    facts: [
+      ["Modèles analysés", "38 modèles d'IA"],
+      ["Analyse", "3 benchmarks · Optimisation de Pareto"],
+      ["Technologies", "Python · pandas · DuckDB · SQL · Tableau"],
+    ],
+    repo: "https://github.com/EyaWal/ai-ecolens",
+    demo: "https://public.tableau.com/views/AIEcoLensAIPerformanceEnergyEfficiency/AIEcoLensOverview",
+  },
+
   {
     title: "Olist — Prédiction des retards de livraison",
     status: { label: "en cours", tone: "active" },
